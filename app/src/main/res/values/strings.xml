@@ -12,7 +12,6 @@
     <string name="search">Search</string>
     <string name="user">User</string>
     <string name="save">Save</string>
-    <string name="logo">logo</string>
     <string-array name="blood_type">
         <item>A+</item>
         <item>B+</item>
