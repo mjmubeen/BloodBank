@@ -58,8 +58,8 @@ public class Signup extends Fragment {
 
     public void onSignupSuccess() {
         signupButton.setEnabled(true);
-        Toast.makeText(this.getActivity(), "Login failed", Toast.LENGTH_SHORT);
-        Intent intent = new Intent(getActivity(), MainActivity.class);
+        Toast.makeText(this.getActivity(), "Signup", Toast.LENGTH_SHORT);
+        Intent intent = new Intent(getActivity(), Home.class);
         startActivity(intent);
     }
 

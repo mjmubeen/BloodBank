@@ -65,7 +65,7 @@ public class Login extends Fragment {
     public void onLoginSuccess() {
         loginButton.setEnabled(true);
         Toast.makeText(getActivity(), "Login", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(this.getActivity(), MainActivity.class);
+        Intent intent = new Intent(this.getActivity(), Home.class);
         startActivity(intent);
     }
 
