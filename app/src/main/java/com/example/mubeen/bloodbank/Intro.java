@@ -29,7 +29,7 @@ public class Intro extends AppCompatActivity {
                     editor.putBoolean("firstTime",firstTime);
                     editor.apply();
                 }
-            }, 10000);
+            }, 100000);
         }
 
         Intent i  = new Intent(Intro.this,MainActivity.class);
