@@ -12,6 +12,16 @@
     <string name="search">Search</string>
     <string name="user">User</string>
     <string name="save">Save</string>
+    <string name="savelife">saveLife</string>
+    <string name="signup_form">Signup Form</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login_form">Login Form</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="login">Login</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="signup">Signup</string>
+    <string name="login">Login</string>
     <string-array name="blood_type">
         <item>A+</item>
         <item>B+</item>

@@ -1,32 +1,40 @@
 package com.example.mubeen.bloodbank;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+
+    Fragment fragment = null;
+    Button button1, button2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ImageView add = findViewById(R.id.imageView2);
-        ImageView search = findViewById(R.id.imageView3);
+        button1 = findViewById(R.id.button4);
+        button2 = findViewById(R.id.button5);
+    }
 
-        add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,Add.class));
-            }
-        });
+    public void onClickOne(View view) {
+        fragment = new Signup();
+        loadFragment(fragment);
+    }
 
-        search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                /*startActivity(new Intent(MainActivity.this,searchview.class));*/
-            }
-        });
+    public void onClickTwo(View view) {
+        fragment = new Login();
+        loadFragment(fragment);
+    }
+
+    private void loadFragment(Fragment fragment) {
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.fragment, fragment);
+        transaction.commit();
     }
 }

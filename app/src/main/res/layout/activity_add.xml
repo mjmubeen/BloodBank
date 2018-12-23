@@ -133,6 +133,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="38dp"
         android:background="#f31c45"
+        android:onClick="Save"
         android:text="@string/save"
         android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
