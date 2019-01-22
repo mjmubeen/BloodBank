@@ -19,13 +19,23 @@ public class Login extends Fragment {
     EditText nameText;
     EditText passwordText;
     Button loginButton;
+    Button SignupButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_login, container, false);
-        nameText = view.findViewById(R.id.editText5);
-        passwordText = view.findViewById(R.id.editText6);
-        loginButton = view.findViewById(R.id.button3);
+        nameText = view.findViewById(R.id.loginUserName);
+        passwordText = view.findViewById(R.id.login_page_password);
+        loginButton = view.findViewById(R.id.login);
+        SignupButton = view.findViewById(R.id.login);// yahan par wo link dalni ha jo signup ki taraf la jaye gi
+        SignupButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Signup();
+            }
+        });
+
         loginButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -34,6 +44,11 @@ public class Login extends Fragment {
             }
         });
         return view;
+    }
+
+    public void Signup()
+    {
+        startActivity(new Intent(this.getActivity(),Signup.class));
     }
 
     public void login() {
