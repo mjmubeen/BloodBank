@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,13 +19,25 @@ import java.util.Objects;
 public class Signup extends Fragment {
     EditText nameText;
     EditText passwordText;
+    EditText rePasswordText;
     Button signupButton;
+    Button loginButton;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_signup, container, false);
-        nameText = view.findViewById(R.id.editText4);
-        passwordText = view.findViewById(R.id.editText5);
-        signupButton = view.findViewById(R.id.button2);
+        nameText = view.findViewById(R.id.signUpUserName);
+        passwordText = view.findViewById(R.id.signUpPassword);
+        rePasswordText = view.findViewById(R.id.signUpRePassword);
+        signupButton = view.findViewById(R.id.signUp);
+        loginButton = view.findViewById(R.id.signUp);// yahan par wo link dalni ha jo login ki taraf la jaye gi
+        loginButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                login();
+            }
+        });
         signupButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -54,17 +67,21 @@ public class Signup extends Fragment {
         editor.apply();
         onSignupSuccess();
     }
+    public void login() {
+
+        startActivity(new Intent(this.getActivity(),Login.class));
+    }
 
 
     public void onSignupSuccess() {
         signupButton.setEnabled(true);
-        Toast.makeText(this.getActivity(), "Signup", Toast.LENGTH_SHORT);
-        Intent intent = new Intent(getActivity(), Home.class);
-        startActivity(intent);
+        Toast.makeText(this.getActivity(), "Signed up", Toast.LENGTH_LONG);
+        //Intent intent = new Intent(getActivity(), Home.class);
+        startActivity(new Intent(this.getActivity(),Home.class));
     }
 
     public void onSignupFailed() {
-        Toast.makeText(getActivity(), "Login failed", Toast.LENGTH_LONG);
+        Toast.makeText(getActivity(), "Signed up failed", Toast.LENGTH_LONG);
         signupButton.setEnabled(true);
     }
 
@@ -73,6 +90,7 @@ public class Signup extends Fragment {
 
         String name = nameText.getText().toString();
         String password = passwordText.getText().toString();
+        String rePassword = rePasswordText.getText().toString();
 
         if (name.isEmpty() || name.length() < 3) {
             nameText.setError("at least 3 characters");
@@ -88,6 +106,13 @@ public class Signup extends Fragment {
         }
         else {
             passwordText.setError(null);
+        }
+
+        if (password.equals(rePassword)) {
+            valid=true;
+        }
+        else {
+            rePasswordText.setError(null);
         }
 
         return valid;
