@@ -17,9 +17,6 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".Home" />
-        <activity android:name=".Add" />
-        <activity android:name=".Blood_Request" />
     </application>
 
 </manifest>

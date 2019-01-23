@@ -10,10 +10,10 @@
     <ImageView
         android:id="@+id/splash_Screen_Logo"
         android:layout_width="0dp"
-        android:layout_height="534dp"
+        android:layout_height="721dp"
         android:layout_marginStart="3dp"
         android:layout_marginEnd="3dp"
-        android:contentDescription="@string/splash_savelife"
+        android:contentDescription="intro Save Life"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
