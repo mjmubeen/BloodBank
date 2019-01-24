@@ -172,6 +172,8 @@ public class LoginFragment extends Fragment implements OnClickListener {
 						if(task.isSuccessful()){
 							//start the profile activity
 							Toast.makeText(getActivity(),"Successfully login",Toast.LENGTH_LONG).show();
+							Intent i = new Intent(getActivity(), NavigationDrawerActivity.class);
+							startActivity(i);
 						}
 						else {
 							Toast.makeText(getActivity(),"Not login",Toast.LENGTH_LONG).show();

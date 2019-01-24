@@ -1,5 +1,6 @@
 package com.example.mubeen.bloodbank;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -123,7 +124,10 @@ public class SignUpFragment extends Fragment implements OnClickListener {
 						if(task.isSuccessful()){
 							//display some message here
 							Toast.makeText(getActivity(),"Successfully registered",Toast.LENGTH_LONG).show();
-						}else{
+							Intent i = new Intent(getActivity(), NavigationDrawerActivity.class);
+							startActivity(i);
+						}
+						else{
 							//display some message here
 							Toast.makeText(getActivity(),"Registration Error",Toast.LENGTH_LONG).show();
 						}
