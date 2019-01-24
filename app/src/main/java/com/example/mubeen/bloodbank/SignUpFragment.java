@@ -1,6 +1,7 @@
 package com.example.mubeen.bloodbank;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.concurrent.Executor;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -21,16 +28,16 @@ public class SignUpFragment extends Fragment implements OnClickListener {
 	private TextView login;
 	private Button signUpButton;
 	private CheckBox terms_conditions;
-//	private FirebaseAuth firebaseAuth;
+	private FirebaseAuth firebaseAuth;
 
 	public SignUpFragment() {
 
 	}
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		view = inflater.inflate(R.layout.signup_layout, container, false);
-//		firebaseAuth = FirebaseAuth.getInstance();
+		firebaseAuth = FirebaseAuth.getInstance();
 		initViews();
 		setListeners();
 		return view;
@@ -108,8 +115,8 @@ public class SignUpFragment extends Fragment implements OnClickListener {
 
 	private void saveFirebase(String getEmailId, String getPassword)
 	{
-		/*firebaseAuth.createUserWithEmailAndPassword(getEmailId, getPassword)
-				.addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+		firebaseAuth.createUserWithEmailAndPassword(getEmailId, getPassword)
+				.addOnCompleteListener((Executor) this, new OnCompleteListener<AuthResult>() {
 					@Override
 					public void onComplete(@NonNull Task<AuthResult> task) {
 						//checking if success
@@ -121,6 +128,6 @@ public class SignUpFragment extends Fragment implements OnClickListener {
 							Toast.makeText(getActivity(),"Registration Error",Toast.LENGTH_LONG).show();
 						}
 					}
-				});*/
+				});
 	}
 }

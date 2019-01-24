@@ -1,6 +1,8 @@
 package com.example.mubeen.bloodbank;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.text.InputType;
@@ -21,6 +23,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.concurrent.Executor;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -34,14 +42,16 @@ public class LoginFragment extends Fragment implements OnClickListener {
 	private LinearLayout loginLayout;
 	private static Animation shakeAnimation;
 	private static FragmentManager fragmentManager;
+	private FirebaseAuth firebaseAuth;
 
 	public LoginFragment() {
 
 	}
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		view = inflater.inflate(R.layout.login_layout, container, false);
+		firebaseAuth = FirebaseAuth.getInstance();
 		initViews();
 		setListeners();
 		return view;
@@ -154,7 +164,20 @@ public class LoginFragment extends Fragment implements OnClickListener {
 
 	private void checkInFirebase(String getEmailId, String getPassword)
 	{
-
+		firebaseAuth.signInWithEmailAndPassword(getEmailId, getPassword)
+				.addOnCompleteListener((Executor) this, new OnCompleteListener<AuthResult>() {
+					@Override
+					public void onComplete(@NonNull Task<AuthResult> task) {
+						//if the task is successfull
+						if(task.isSuccessful()){
+							//start the profile activity
+							Toast.makeText(getActivity(),"Successfully login",Toast.LENGTH_LONG).show();
+						}
+						else {
+							Toast.makeText(getActivity(),"Not login",Toast.LENGTH_LONG).show();
+						}
+					}
+				});
 	}
 
 }
