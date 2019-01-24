@@ -85,8 +85,7 @@ public class Login_Fragment extends Fragment implements OnClickListener {
 																			// text
 
 							password.setInputType(InputType.TYPE_CLASS_TEXT);
-							password.setTransformationMethod(HideReturnsTransformationMethod
-									.getInstance());// show password
+							password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());// show password
 						}
 						else {
 							show_hide_password.setText(R.string.show_pwd);// change
@@ -115,16 +114,12 @@ public class Login_Fragment extends Fragment implements OnClickListener {
 			fragmentManager
 					.beginTransaction()
 					.setCustomAnimations(R.anim.right_enter, R.anim.left_out)
-					.replace(R.id.frameContainer,
-							new ForgotPassword_Fragment(),
-							Utils.ForgotPassword_Fragment).commit();
+					.replace(R.id.frameContainer, new ForgotPassword_Fragment(), Utils.ForgotPassword_Fragment).commit();
 			break;
 		case R.id.createAccount:
 
 			// Replace signup frgament with animation
-			fragmentManager
-					.beginTransaction()
-					.setCustomAnimations(R.anim.right_enter, R.anim.left_out)
+			fragmentManager.beginTransaction().setCustomAnimations(R.anim.right_enter, R.anim.left_out)
 					.replace(R.id.frameContainer, new SignUp_Fragment(), Utils.SignUp_Fragment).commit();
 			break;
 		}
@@ -143,8 +138,7 @@ public class Login_Fragment extends Fragment implements OnClickListener {
 		Matcher m = p.matcher(getEmailId);
 
 		// Check for both field is empty or not
-		if (getEmailId.equals("") || getEmailId.length() == 0
-				|| getPassword.equals("") || getPassword.length() == 0) {
+		if (getEmailId.equals("") || getEmailId.length() == 0 || getPassword.equals("") || getPassword.length() == 0) {
 			loginLayout.startAnimation(shakeAnimation);
 			Toast.makeText(getActivity(), "Enter both credentials.", Toast.LENGTH_SHORT).show();
 
