@@ -15,21 +15,22 @@ import android.widget.Toast;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class SignUp_Fragment extends Fragment implements OnClickListener {
+public class SignUpFragment extends Fragment implements OnClickListener {
 	private View view;
-	private EditText fullName, emailId, mobileNumber, location, password, confirmPassword;
+	private EditText emailId, password, confirmPassword;
 	private TextView login;
 	private Button signUpButton;
 	private CheckBox terms_conditions;
+//	private FirebaseAuth firebaseAuth;
 
-	public SignUp_Fragment() {
+	public SignUpFragment() {
 
 	}
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		view = inflater.inflate(R.layout.signup_layout, container, false);
+//		firebaseAuth = FirebaseAuth.getInstance();
 		initViews();
 		setListeners();
 		return view;
@@ -37,10 +38,7 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
 
 	// Initialize all views
 	private void initViews() {
-		fullName = view.findViewById(R.id.fullName);
 		emailId = view.findViewById(R.id.userEmailId);
-		mobileNumber = view.findViewById(R.id.mobileNumber);
-		location = view.findViewById(R.id.location);
 		password = view.findViewById(R.id.password);
 		confirmPassword = view.findViewById(R.id.confirmPassword);
 		signUpButton = view.findViewById(R.id.signUpBtn);
@@ -76,10 +74,7 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
 	private void checkValidation() {
 
 		// Get all edittext texts
-		String getFullName = fullName.getText().toString();
 		String getEmailId = emailId.getText().toString();
-		String getMobileNumber = mobileNumber.getText().toString();
-		String getLocation = location.getText().toString();
 		String getPassword = password.getText().toString();
 		String getConfirmPassword = confirmPassword.getText().toString();
 
@@ -88,13 +83,8 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
 		Matcher m = p.matcher(getEmailId);
 
 		// Check if all strings are null or not
-		if (getFullName.equals("") || getFullName.length() == 0
-				|| getEmailId.equals("") || getEmailId.length() == 0
-				|| getMobileNumber.equals("") || getMobileNumber.length() == 0
-				|| getLocation.equals("") || getLocation.length() == 0
-				|| getPassword.equals("") || getPassword.length() == 0
-				|| getConfirmPassword.equals("")
-				|| getConfirmPassword.length() == 0)
+		if (getEmailId.equals("") || getEmailId.length() == 0 || getPassword.equals("") || getPassword.length() == 0
+				|| getConfirmPassword.equals("") || getConfirmPassword.length() == 0)
 
 			Toast.makeText(getActivity(),  "All fields are required.", Toast.LENGTH_SHORT).show();
 
@@ -112,7 +102,25 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
 
 		// Else do signup or do your stuff
 		else
-			Toast.makeText(getActivity(), "Do SignUp.", Toast.LENGTH_SHORT).show();
+			saveFirebase(getEmailId, getPassword);
 
+	}
+
+	private void saveFirebase(String getEmailId, String getPassword)
+	{
+		/*firebaseAuth.createUserWithEmailAndPassword(getEmailId, getPassword)
+				.addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+					@Override
+					public void onComplete(@NonNull Task<AuthResult> task) {
+						//checking if success
+						if(task.isSuccessful()){
+							//display some message here
+							Toast.makeText(getActivity(),"Successfully registered",Toast.LENGTH_LONG).show();
+						}else{
+							//display some message here
+							Toast.makeText(getActivity(),"Registration Error",Toast.LENGTH_LONG).show();
+						}
+					}
+				});*/
 	}
 }

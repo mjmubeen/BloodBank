@@ -18,16 +18,15 @@ public class MainActivity extends AppCompatActivity {
 
 		// If savedinstnacestate is null then replace login fragment
 		if (savedInstanceState == null) {
-			fragmentManager.beginTransaction().replace(R.id.frameContainer, new Login_Fragment(), Utils.Login_Fragment).commit();
+			fragmentManager.beginTransaction().replace(R.id.frameContainer, new LoginFragment(), Utils.Login_Fragment).commit();
 		}
 
 	}
 
 	// Replace Login Fragment with animation
 	protected void replaceLoginFragment() {
-		fragmentManager
-				.beginTransaction().setCustomAnimations(R.anim.left_enter, R.anim.right_out)
-				.replace(R.id.frameContainer, new Login_Fragment(), Utils.Login_Fragment).commit();
+		fragmentManager.beginTransaction().setCustomAnimations(R.anim.left_enter, R.anim.right_out)
+				.replace(R.id.frameContainer, new LoginFragment(), Utils.Login_Fragment).commit();
 	}
 
 	@Override

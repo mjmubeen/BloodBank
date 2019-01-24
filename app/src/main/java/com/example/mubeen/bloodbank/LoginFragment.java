@@ -24,7 +24,7 @@ import android.widget.Toast;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Login_Fragment extends Fragment implements OnClickListener {
+public class LoginFragment extends Fragment implements OnClickListener {
 	private View view;
 
 	private EditText emailId, password;
@@ -35,7 +35,7 @@ public class Login_Fragment extends Fragment implements OnClickListener {
 	private static Animation shakeAnimation;
 	private static FragmentManager fragmentManager;
 
-	public Login_Fragment() {
+	public LoginFragment() {
 
 	}
 
@@ -120,7 +120,7 @@ public class Login_Fragment extends Fragment implements OnClickListener {
 
 			// Replace signup frgament with animation
 			fragmentManager.beginTransaction().setCustomAnimations(R.anim.right_enter, R.anim.left_out)
-					.replace(R.id.frameContainer, new SignUp_Fragment(), Utils.SignUp_Fragment).commit();
+					.replace(R.id.frameContainer, new SignUpFragment(), Utils.SignUp_Fragment).commit();
 			break;
 		}
 
@@ -148,7 +148,13 @@ public class Login_Fragment extends Fragment implements OnClickListener {
 			Toast.makeText(getActivity(), "Your Email Id is Invalid.", Toast.LENGTH_SHORT).show();
 		// Else do login and do your stuff
 		else
-			Toast.makeText(getActivity(), "Do Login.", Toast.LENGTH_SHORT).show();
+			checkInFirebase(getEmailId, getPassword);
 
 	}
+
+	private void checkInFirebase(String getEmailId, String getPassword)
+	{
+
+	}
+
 }
