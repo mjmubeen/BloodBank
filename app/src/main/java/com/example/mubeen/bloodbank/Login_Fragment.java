@@ -141,7 +141,6 @@ public class Login_Fragment extends Fragment implements OnClickListener {
 		if (getEmailId.equals("") || getEmailId.length() == 0 || getPassword.equals("") || getPassword.length() == 0) {
 			loginLayout.startAnimation(shakeAnimation);
 			Toast.makeText(getActivity(), "Enter both credentials.", Toast.LENGTH_SHORT).show();
-
 		}
 		// Check if email id is valid or not
 		else if (!m.find())

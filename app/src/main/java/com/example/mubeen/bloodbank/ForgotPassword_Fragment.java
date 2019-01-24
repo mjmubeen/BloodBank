@@ -24,10 +24,8 @@ public class ForgotPassword_Fragment extends Fragment implements OnClickListener
 	}
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		view = inflater.inflate(R.layout.forgotpassword_layout, container,
-				false);
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		view = inflater.inflate(R.layout.forgotpassword_layout, container, false);
 		initViews();
 		setListeners();
 		return view;
@@ -76,7 +74,6 @@ public class ForgotPassword_Fragment extends Fragment implements OnClickListener
 
 		// First check if email id is not null else show error toast
 		if (getEmailId.equals("") || getEmailId.length() == 0)
-
 			Toast.makeText(getActivity(), "Please enter your Email Id.", Toast.LENGTH_SHORT).show();
 
 		// Check if email id is valid or not
