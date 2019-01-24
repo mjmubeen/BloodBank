@@ -27,7 +27,7 @@ import java.util.regex.Pattern;
 public class Login_Fragment extends Fragment implements OnClickListener {
 	private View view;
 
-	private EditText emailid, password;
+	private EditText emailId, password;
 	private Button loginButton;
 	private TextView forgotPassword, signUp;
 	private CheckBox show_hide_password;
@@ -51,7 +51,7 @@ public class Login_Fragment extends Fragment implements OnClickListener {
 	private void initViews() {
 		fragmentManager = getActivity().getSupportFragmentManager();
 
-		emailid = view.findViewById(R.id.login_emailid);
+		emailId = view.findViewById(R.id.login_emailid);
 		password = view.findViewById(R.id.login_password);
 		loginButton = view.findViewById(R.id.loginBtn);
 		forgotPassword = view.findViewById(R.id.forgot_password);
@@ -129,7 +129,7 @@ public class Login_Fragment extends Fragment implements OnClickListener {
 	// Check Validation before login
 	private void checkValidation() {
 		// Get email id and password
-		String getEmailId = emailid.getText().toString();
+		String getEmailId = emailId.getText().toString();
 		String getPassword = password.getText().toString();
 
 		// Check patter for email id
@@ -141,6 +141,7 @@ public class Login_Fragment extends Fragment implements OnClickListener {
 		if (getEmailId.equals("") || getEmailId.length() == 0 || getPassword.equals("") || getPassword.length() == 0) {
 			loginLayout.startAnimation(shakeAnimation);
 			Toast.makeText(getActivity(), "Enter both credentials.", Toast.LENGTH_SHORT).show();
+
 		}
 		// Check if email id is valid or not
 		else if (!m.find())
