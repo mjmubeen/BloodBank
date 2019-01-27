@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.text.InputType;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -28,7 +29,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import java.util.concurrent.Executor;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -83,17 +83,14 @@ public class LoginFragment extends Fragment implements OnClickListener {
 		show_hide_password.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
 					@Override
-					public void onCheckedChanged(CompoundButton button,
-							boolean isChecked) {
+					public void onCheckedChanged(CompoundButton button, boolean isChecked) {
 
 						// If it is checkec then show password else hide
 						// password
 						if (isChecked) {
-
 							show_hide_password.setText(R.string.hide_pwd);// change
 																			// checkbox
 																			// text
-
 							password.setInputType(InputType.TYPE_CLASS_TEXT);
 							password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());// show password
 						}
@@ -148,7 +145,7 @@ public class LoginFragment extends Fragment implements OnClickListener {
 		Matcher m = p.matcher(getEmailId);
 
 		// Check for both field is empty or not
-		if (getEmailId.equals("") || getEmailId.length() == 0 || getPassword.equals("") || getPassword.length() == 0) {
+		if (getEmailId.equals("") || getEmailId.length() == 0 || getPassword.equals("") || getPassword.length() == 0 || getPassword.length() <= 6) {
 			loginLayout.startAnimation(shakeAnimation);
 			Toast.makeText(getActivity(), "Enter both credentials.", Toast.LENGTH_SHORT).show();
 
@@ -165,18 +162,17 @@ public class LoginFragment extends Fragment implements OnClickListener {
 	private void checkInFirebase(String getEmailId, String getPassword)
 	{
 		firebaseAuth.signInWithEmailAndPassword(getEmailId, getPassword)
-				.addOnCompleteListener((Executor) this, new OnCompleteListener<AuthResult>() {
+				.addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
 					@Override
 					public void onComplete(@NonNull Task<AuthResult> task) {
-						//if the task is successfull
-						if(task.isSuccessful()){
-							//start the profile activity
-							Toast.makeText(getActivity(),"Successfully login",Toast.LENGTH_LONG).show();
-							Intent i = new Intent(getActivity(), NavigationDrawerActivity.class);
-							startActivity(i);
+						if (!task.isSuccessful()) {
+							Toast.makeText(getActivity(), "Authentication Failed", Toast.LENGTH_LONG).show();
+							Log.v("error", task.getResult().toString());
 						}
 						else {
-							Toast.makeText(getActivity(),"Not login",Toast.LENGTH_LONG).show();
+							Intent intent = new Intent(getActivity(), NavigationDrawerActivity.class);
+							startActivity(intent);
+                            new MainActivity().finish();
 						}
 					}
 				});

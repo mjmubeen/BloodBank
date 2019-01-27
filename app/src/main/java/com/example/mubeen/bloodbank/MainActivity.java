@@ -33,10 +33,8 @@ public class MainActivity extends AppCompatActivity {
 	public void onBackPressed() {
 
 		// Find the tag of signup and forgot password fragment
-		Fragment SignUp_Fragment = fragmentManager
-				.findFragmentByTag(Utils.SignUp_Fragment);
-		Fragment ForgotPassword_Fragment = fragmentManager
-				.findFragmentByTag(Utils.ForgotPassword_Fragment);
+		Fragment SignUp_Fragment = fragmentManager.findFragmentByTag(Utils.SignUp_Fragment);
+		Fragment ForgotPassword_Fragment = fragmentManager.findFragmentByTag(Utils.ForgotPassword_Fragment);
 
 		// Check if both are null or not
 		// If both are not null then replace login fragment else do backpressed

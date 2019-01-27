@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -117,19 +118,17 @@ public class SignUpFragment extends Fragment implements OnClickListener {
 	private void saveFirebase(String getEmailId, String getPassword)
 	{
 		firebaseAuth.createUserWithEmailAndPassword(getEmailId, getPassword)
-				.addOnCompleteListener((Executor) this, new OnCompleteListener<AuthResult>() {
+				.addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
 					@Override
 					public void onComplete(@NonNull Task<AuthResult> task) {
-						//checking if success
-						if(task.isSuccessful()){
-							//display some message here
-							Toast.makeText(getActivity(),"Successfully registered",Toast.LENGTH_LONG).show();
-							Intent i = new Intent(getActivity(), NavigationDrawerActivity.class);
-							startActivity(i);
+						if (!task.isSuccessful()) {
+							Toast.makeText(getActivity(), "Signup Failed", Toast.LENGTH_LONG).show();
+							Log.v("error", task.getResult().toString());
 						}
-						else{
-							//display some message here
-							Toast.makeText(getActivity(),"Registration Error",Toast.LENGTH_LONG).show();
+						else {
+							Intent intent = new Intent(getActivity(), NavigationDrawerActivity.class);
+							startActivity(intent);
+							new MainActivity().finish();
 						}
 					}
 				});
