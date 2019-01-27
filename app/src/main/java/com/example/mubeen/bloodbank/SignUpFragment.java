@@ -92,9 +92,8 @@ public class SignUpFragment extends Fragment implements OnClickListener {
 		Matcher m = p.matcher(getEmailId);
 
 		// Check if all strings are null or not
-		if (getEmailId.equals("") || getEmailId.length() == 0 || getPassword.equals("") || getPassword.length() == 0
-				|| getConfirmPassword.equals("") || getConfirmPassword.length() == 0)
-
+		if (getEmailId.equals("") || getEmailId.length() == 0 || getPassword.equals("") || getPassword.length() == 0 || getPassword.length() < 6
+				|| getConfirmPassword.equals("") || getConfirmPassword.length() == 0 || getConfirmPassword.length() < 6)
 			Toast.makeText(getActivity(),  "All fields are required.", Toast.LENGTH_SHORT).show();
 
 		// Check if email id valid or not

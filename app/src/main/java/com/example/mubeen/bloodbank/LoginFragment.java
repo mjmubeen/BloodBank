@@ -145,7 +145,7 @@ public class LoginFragment extends Fragment implements OnClickListener {
 		Matcher m = p.matcher(getEmailId);
 
 		// Check for both field is empty or not
-		if (getEmailId.equals("") || getEmailId.length() == 0 || getPassword.equals("") || getPassword.length() == 0 || getPassword.length() <= 6) {
+		if (getEmailId.equals("") || getEmailId.length() == 0 || getPassword.equals("") || getPassword.length() == 0 || getPassword.length() < 6) {
 			loginLayout.startAnimation(shakeAnimation);
 			Toast.makeText(getActivity(), "Enter both credentials.", Toast.LENGTH_SHORT).show();
 
@@ -177,5 +177,4 @@ public class LoginFragment extends Fragment implements OnClickListener {
 					}
 				});
 	}
-
 }
