@@ -74,11 +74,14 @@ public class NavigationDrawerActivity extends AppCompatActivity
         if (id == R.id.doners)
         {
 
-        } else if (id == R.id.bloodsgroup) {
+        }
+        else if (id == R.id.bloodsgroup) {
 
-        } else if (id == R.id.saved_donors) {
+        }
+        else if (id == R.id.saved_donors) {
 
-        } else if (id == R.id.Info) {
+        }
+        else if (id == R.id.Info) {
 
         }
 
