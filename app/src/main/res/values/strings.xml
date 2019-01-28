@@ -40,6 +40,18 @@
     <string name="add_save_data">Add save data</string>
     <string name="save_data">Save Data</string>
     <string name="profile">Profile</string>
+    <string name="profile_image_in_profile">Profile Image In Profile</string>
+    <string name="dummyName">Dummy</string>
+    <string name="profileSetting">edit profile</string>
+    <string name="dummyAddress">Dummy</string>
+    <string name="phoneProfile">Phone</string>
+    <string name="profilePhoneText">dummy@gmail.com</string>
+    <string name="profilePhone">Email</string>
+    <string name="_1_202_555_0157">+1-202-555-0157</string>
+    <string name="profileGender">Gender</string>
+    <string name="profileGenderText">Male</string>
+    <string name="profileDate">Date</string>
+    <string name="profileDateText">5/21/1996</string>
 
     <string-array name="blood_type">
         <item>A+</item>

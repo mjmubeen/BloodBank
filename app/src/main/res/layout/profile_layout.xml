@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -19,6 +20,7 @@
             android:background="@drawable/circle_border">
 
             <ImageView
+                android:id="@+id/profileImage"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_margin="9dp"
@@ -26,7 +28,8 @@
                 android:background="@drawable/circle"
                 android:padding="3dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/user" />
+                android:src="@drawable/user"
+                android:contentDescription="@string/profile_image_in_profile" />
 
         </RelativeLayout>
 
@@ -38,7 +41,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15sp"
             android:fontFamily="sans-serif-light"
-            android:text="Dummy"
+            android:text="@string/dummyName"
             android:textColor="@color/white"
             android:textSize="32sp" />
 
@@ -50,21 +53,22 @@
             android:layout_below="@+id/tv_name"
             android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif"
-            android:text="Dummy"
+            android:text="@string/dummyAddress"
             android:textAllCaps="true"
             android:textColor="@color/address"
             android:textSize="14sp" />
 
         <ImageView
+            android:id="@+id/setting"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="15dp"
             android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
             android:adjustViewBounds="true"
+            android:contentDescription="@string/profileSetting"
             android:scaleType="centerInside"
-            android:src="@drawable/ic_settings"
-            android:contentDescription="edit profile" />
+            android:src="@drawable/ic_settings" />
 
     </RelativeLayout>
 
@@ -77,8 +81,8 @@
 
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="393dp"
+        android:layout_height="465dp"
         android:layout_below="@+id/linlay1">
 
         <LinearLayout
@@ -86,9 +90,10 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
             android:layout_marginTop="20dp"
-            android:orientation="vertical">
+            android:layout_marginRight="30dp"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -96,17 +101,19 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/profileEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Email"
+                    android:text="@string/profilePhone"
                     android:textColor="@color/headings"
                     android:textSize="13sp" />
 
                 <TextView
+                    android:id="@+id/profileEmailText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="joey@sharenofood.com"
+                    android:text="@string/profilePhoneText"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -125,17 +132,19 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/profilePhone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Phone"
+                    android:text="@string/phoneProfile"
                     android:textColor="@color/headings"
                     android:textSize="13sp" />
 
                 <TextView
+                    android:id="@+id/profilePhoneText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="+1-202-555-0157"
+                    android:text="@string/_1_202_555_0157"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -154,17 +163,19 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/profileGender"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Twitter"
+                    android:text="@string/profileGender"
                     android:textColor="@color/headings"
                     android:textSize="13sp" />
 
                 <TextView
+                    android:id="@+id/profileGenderText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="twitterUsername"
+                    android:text="@string/profileGenderText"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -183,17 +194,19 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/profileDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Facebook"
+                    android:text="@string/profileDate"
                     android:textColor="@color/headings"
                     android:textSize="13sp" />
 
                 <TextView
+                    android:id="@+id/profileDateText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="facebook.com/joeytrib"
+                    android:text="@string/profileDateText"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
