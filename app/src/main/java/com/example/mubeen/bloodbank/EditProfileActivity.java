@@ -34,9 +34,9 @@ public class EditProfileActivity extends AppCompatActivity {
         nameText = findViewById(R.id.add_User_Name);
         mobileText = findViewById(R.id.add_Phone_Number);
         birthText = findViewById(R.id.dateText);
-        B_type = (Spinner) findViewById(R.id.Add_Spinner_Blood_type);
-        loc = (Spinner) findViewById(R.id.Add_Spinner_City);
-        Gender = (Spinner) findViewById(R.id.Add_Spinner_Gender);
+        B_type = findViewById(R.id.Add_Spinner_Blood_type);
+        loc = findViewById(R.id.Add_Spinner_City);
+        Gender = findViewById(R.id.Add_Spinner_Gender);
         mAuth = FirebaseAuth.getInstance();
     }
 

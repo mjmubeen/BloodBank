@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--<RelativeLayout
+    <RelativeLayout
         android:id="@+id/rellay1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -104,7 +104,7 @@
                     android:id="@+id/profileEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="profilePhone"
+                    android:text="Email"
                     android:textColor="@color/headings"
                     android:textSize="13sp" />
 
@@ -113,7 +113,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="profilePhoneText"
+                    android:text="dummy@gmail.com"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -135,7 +135,7 @@
                     android:id="@+id/profilePhone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="phoneProfile"
+                    android:text="Phone"
                     android:textColor="@color/headings"
                     android:textSize="13sp" />
 
@@ -144,7 +144,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="_1_202_555_0157"
+                    android:text="03215566456"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -166,7 +166,7 @@
                     android:id="@+id/profileGender"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Gender"
+                    android:text="profileGender"
                     android:textColor="@color/headings"
                     android:textSize="13sp" />
 
@@ -175,7 +175,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="Male"
+                    android:text="profileGenderText"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -197,7 +197,7 @@
                     android:id="@+id/profileDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Date"
+                    android:text="profileDate"
                     android:textColor="@color/headings"
                     android:textSize="13sp" />
 
@@ -206,7 +206,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="5/21/1996"
+                    android:text="profileDateText"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -221,6 +221,6 @@
 
         </LinearLayout>
 
-    </RelativeLayout>-->
+    </RelativeLayout>
 
 </RelativeLayout>

@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
         android:layout_marginTop="49dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="49dp"
         android:text="@string/add_name"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/text_Add_Mobile_Number"
@@ -65,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
-        android:layout_marginBottom="42dp"
+        android:layout_marginBottom="43dp"
         android:text="@string/add_mobile"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/textView"
@@ -109,12 +109,12 @@
         android:id="@+id/Add_Spinner_City"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="11dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginEnd="27dp"
         android:entries="@array/panch"
         app:layout_constraintBaseline_toBaselineOf="@+id/text_Add_City"
-        app:layout_constraintEnd_toEndOf="@+id/Add_Spinner_Gender"
-        app:layout_constraintStart_toEndOf="@+id/textView" />
+        app:layout_constraintEnd_toEndOf="@+id/Add_Spinner_Blood_type"
+        app:layout_constraintStart_toEndOf="@+id/text_Add_Mobile_Number" />
 
 
     <Button
@@ -147,14 +147,14 @@
         android:layout_width="0dp"
         android:layout_height="42dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="77dp"
         android:layout_marginEnd="15dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="78dp"
         android:entries="@array/gender"
-        app:layout_constraintBottom_toTopOf="@+id/add_Save"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/add_Save"
+        app:layout_constraintEnd_toEndOf="@+id/Add_Spinner_Blood_type"
         app:layout_constraintStart_toStartOf="@+id/Add_Spinner_Blood_type"
-        app:layout_constraintTop_toBottomOf="@+id/Add_Spinner_City" />
+        app:layout_constraintTop_toTopOf="@+id/text_Add_City" />
 
     <EditText
         android:id="@+id/dateText"
