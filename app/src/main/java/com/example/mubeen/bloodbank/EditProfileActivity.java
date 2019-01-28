@@ -24,7 +24,7 @@ public class EditProfileActivity extends AppCompatActivity {
     Spinner loc;
     Spinner B_type;
     private FirebaseAuth mAuth;
-    DatabaseReference reference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

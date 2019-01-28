@@ -5,8 +5,12 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/doners"
+            android:id="@+id/profile"
             android:icon="@drawable/ic_person_"
+            android:title="@string/profile" />
+        <item
+            android:id="@+id/doners"
+            android:icon="@drawable/ic_group"
             android:title="@string/donors" />
         <item
             android:id="@+id/bloodsgroup"

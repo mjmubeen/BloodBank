@@ -39,6 +39,7 @@
     <string name="add_city">Add City</string>
     <string name="add_save_data">Add save data</string>
     <string name="save_data">Save Data</string>
+    <string name="profile">Profile</string>
 
     <string-array name="blood_type">
         <item>A+</item>
