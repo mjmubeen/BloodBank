@@ -41,6 +41,18 @@
     <string name="profile">Profile</string>
     <string name="blood_type">Blood Type</string>
     <string name="gender">Gender</string>
+    <string name="profileEmail">Email</string>
+    <string name="profileEmailText">dummy@gmail.com</string>
+    <string name="profilePhone">Phone</string>
+    <string name="profilePhoneText">03215566456</string>
+    <string name="profileGender">Gender</string>
+    <string name="profileGenderText">Male</string>
+    <string name="profileDate">Date Of Birth</string>
+    <string name="profileDateText">21-5-1996</string>
+    <string name="profileSetting">profileSetting</string>
+    <string name="tv_address">Dummy</string>
+    <string name="tv_name">Dummy</string>
+    <string name="profile_image_in_profile">profile image in profile</string>
 
     <string-array name="blood_type">
         <item>A+</item>

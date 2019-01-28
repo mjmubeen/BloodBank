@@ -29,7 +29,7 @@
                 android:padding="3dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/user"
-                android:contentDescription="profile image in profile" />
+                android:contentDescription="@string/profile_image_in_profile" />
 
         </RelativeLayout>
 
@@ -41,7 +41,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15sp"
             android:fontFamily="sans-serif-light"
-            android:text="Dummy"
+            android:text="@string/tv_name"
             android:textColor="@color/white"
             android:textSize="32sp" />
 
@@ -53,7 +53,7 @@
             android:layout_below="@+id/tv_name"
             android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif"
-            android:text="Dummy"
+            android:text="@string/tv_address"
             android:textAllCaps="true"
             android:textColor="@color/address"
             android:textSize="14sp" />
@@ -66,7 +66,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="15dp"
             android:adjustViewBounds="true"
-            android:contentDescription="profileSetting"
+            android:contentDescription="@string/profileSetting"
             android:scaleType="centerInside"
             android:src="@drawable/ic_settings" />
 
@@ -104,7 +104,7 @@
                     android:id="@+id/profileEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Email"
+                    android:text="@string/profileEmail"
                     android:textColor="@color/headings"
                     android:textSize="13sp" />
 
@@ -113,7 +113,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="dummy@gmail.com"
+                    android:text="@string/profileEmailText"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -135,7 +135,7 @@
                     android:id="@+id/profilePhone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Phone"
+                    android:text="@string/profilePhone"
                     android:textColor="@color/headings"
                     android:textSize="13sp" />
 
@@ -144,7 +144,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="03215566456"
+                    android:text="@string/profilePhoneText"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -166,7 +166,7 @@
                     android:id="@+id/profileGender"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="profileGender"
+                    android:text="@string/profileGender"
                     android:textColor="@color/headings"
                     android:textSize="13sp" />
 
@@ -175,7 +175,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="profileGenderText"
+                    android:text="@string/profileGenderText"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -197,7 +197,7 @@
                     android:id="@+id/profileDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="profileDate"
+                    android:text="@string/profileDate"
                     android:textColor="@color/headings"
                     android:textSize="13sp" />
 
@@ -206,7 +206,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="profileDateText"
+                    android:text="@string/profileDateText"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
