@@ -31,13 +31,13 @@
     <string name="share">Share</string>
     <string name="send">Send</string>
     <string name="user_image">user_image</string>
-    <string name="add_mobile">Add_mobile</string>
-    <string name="add_blood_type">Add_blood_type</string>
-    <string name="add_name">Add_name</string>
-    <string name="add_enter_your_name">Add_enter_your_name</string>
-    <string name="add_enter_your_number">Add_enter_your_number</string>
-    <string name="add_city">Add_city</string>
-    <string name="add_save_data">Add_save_data</string>
+    <string name="add_mobile">Add mobile</string>
+    <string name="add_blood_type">Add blood type</string>
+    <string name="add_name">Add Name</string>
+    <string name="add_enter_your_name">Add enter your name</string>
+    <string name="add_enter_your_number">Add enter your number</string>
+    <string name="add_city">Add city</string>
+    <string name="add_save_data">Add save data</string>
     <string name="save_data">Save Data</string>
 
     <string-array name="blood_type">
