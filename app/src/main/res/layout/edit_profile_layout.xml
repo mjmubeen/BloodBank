@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:layout_editor_absoluteY="81dp">
+    tools:layout_editor_absoluteY="25dp">
 
     <ImageView
         android:id="@+id/add_logo"
@@ -24,38 +24,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
-        android:layout_marginTop="175dp"
         android:text="@string/add_name"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/add_User_Name"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/add_User_Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="31dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="7dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/add_enter_your_name"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/add_Phone_Number"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_logo"
         tools:targetApi="o" />
 
     <EditText
         android:id="@+id/add_Phone_Number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="37dp"
         android:layout_marginEnd="7dp"
-        android:layout_marginBottom="28dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/add_enter_your_number"
         android:inputType="phone"
-        app:layout_constraintBottom_toTopOf="@+id/Add_Spinner_Blood_type"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_User_Name"
         tools:targetApi="o" />
 
     <TextView
@@ -63,57 +62,59 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
-        android:layout_marginTop="44dp"
         android:text="@string/add_mobile"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_Add_User_Name" />
+        app:layout_constraintBottom_toBottomOf="@+id/add_Phone_Number"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/text_Blood_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="39dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="29dp"
         android:text="@string/blood_type"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_Add_Mobile_Number" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/Add_Spinner_Blood_type"
+        app:layout_constraintEnd_toStartOf="@+id/Add_Spinner_Blood_type"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
         android:id="@+id/Add_Spinner_Blood_type"
         android:layout_width="0dp"
         android:layout_height="43dp"
+        android:layout_marginTop="77dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="77dp"
         android:ems="10"
         android:entries="@array/blood_type"
-        app:layout_constraintBottom_toBottomOf="@+id/text_Blood_type"
-        app:layout_constraintEnd_toEndOf="@+id/add_User_Name"
-        app:layout_constraintStart_toStartOf="@+id/add_Phone_Number" />
+        app:layout_constraintBottom_toBottomOf="@+id/Add_Spinner_City"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_Blood_type"
+        app:layout_constraintTop_toTopOf="@+id/add_Phone_Number" />
 
     <TextView
         android:id="@+id/text_Add_City"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="8dp"
         android:text="@string/add_city"
         android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/Add_Spinner_City"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_Blood_type" />
+        app:layout_constraintTop_toTopOf="@+id/Add_Spinner_City" />
 
     <Spinner
         android:id="@+id/Add_Spinner_City"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginTop="117dp"
-        android:layout_marginBottom="115dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="157dp"
         android:entries="@array/panch"
-        app:layout_constraintBottom_toBottomOf="@+id/add_Save"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/text_Add_City"
-        app:layout_constraintTop_toBottomOf="@+id/add_Phone_Number" />
+        app:layout_constraintStart_toEndOf="@+id/text_Add_Mobile_Number" />
 
 
     <Button
@@ -121,13 +122,40 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="67dp"
+        android:layout_marginBottom="2dp"
         android:background="#f31c45"
         android:onClick="Save"
         android:text="@string/save_data"
         android:textColor="#fff"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/text_add_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginBottom="42dp"
+        android:text="@string/gender"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/add_Save"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_Add_City" />
+
+    <Spinner
+        android:id="@+id/Add_Spinner_Gender"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="83dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="82dp"
+        android:entries="@array/gender"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/add_Save"
+        app:layout_constraintTop_toTopOf="@+id/Add_Spinner_City" />
 
 </android.support.constraint.ConstraintLayout>
