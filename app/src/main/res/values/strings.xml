@@ -53,6 +53,7 @@
     <string name="tv_address">Dummy</string>
     <string name="tv_name">Dummy</string>
     <string name="profile_image_in_profile">profile image in profile</string>
+    <string name="tv_blood">+O</string>
 
     <string-array name="blood_type">
         <item>A+</item>

@@ -58,6 +58,19 @@
             android:textColor="@color/address"
             android:textSize="14sp" />
 
+        <TextView
+            android:id="@+id/tv_blood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="22dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/tv_blood"
+            android:textAllCaps="true"
+            android:textColor="@color/address"
+            android:textSize="14sp" />
+
         <ImageView
             android:id="@+id/setting"
             android:layout_width="40dp"
