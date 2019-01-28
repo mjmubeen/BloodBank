@@ -1,5 +1,6 @@
 package com.example.mubeen.bloodbank;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -31,6 +32,7 @@ public class SignUpFragment extends Fragment implements OnClickListener {
 	private Button signUpButton;
 	private CheckBox terms_conditions;
 	private FirebaseAuth firebaseAuth;
+	ProgressDialog pg;
 
 	public SignUpFragment() {
 
@@ -81,7 +83,6 @@ public class SignUpFragment extends Fragment implements OnClickListener {
 
 	// Check Validation Method
 	private void checkValidation() {
-
 		// Get all edittext texts
 		String getEmailId = emailId.getText().toString();
 		String getPassword = password.getText().toString();
@@ -113,7 +114,12 @@ public class SignUpFragment extends Fragment implements OnClickListener {
 
 		// Else do signup or do your stuff
 		else
+		{
+			pg = new ProgressDialog(getActivity());
+			pg.setMessage("Please Wait....");
+			pg.show();
 			saveFirebase(getEmailId, getPassword);
+		}
 
 	}
 
@@ -125,11 +131,12 @@ public class SignUpFragment extends Fragment implements OnClickListener {
 					public void onComplete(@NonNull Task<AuthResult> task) {
 						if (!task.isSuccessful()) {
 							Toast.makeText(getActivity(), "Signup Failed", Toast.LENGTH_LONG).show();
-							//Log.v("error", task.getResult().toString());
+							pg.dismiss();
 						}
 						else {
 							Intent intent = new Intent(getActivity(), EditProfileActivity.class);
 							startActivity(intent);
+							pg.dismiss();
 							new MainActivity().finish();
 						}
 					}

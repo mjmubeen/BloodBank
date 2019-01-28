@@ -1,6 +1,7 @@
 package com.example.mubeen.bloodbank;
 
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -26,6 +27,7 @@ public class EditProfileActivity extends AppCompatActivity {
     Spinner loc, B_type, Gender;
     boolean databtn = false;
     private FirebaseAuth mAuth;
+    ProgressDialog pg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +61,7 @@ public class EditProfileActivity extends AppCompatActivity {
     }
 
     public void Save(View view) {
+
         String name = nameText.getText().toString();
         String mobile = mobileText.getText().toString();
         String birth = birthText.getText().toString();
@@ -69,11 +72,15 @@ public class EditProfileActivity extends AppCompatActivity {
             onSignupFailed();
             return;
         }
+        pg = new ProgressDialog(this);
+        pg.setMessage("Saving....");
+        pg.show();
         saveInFirebase(name, mobile, location, blood, gender, birth);
     }
 
 
     public void onSignupSuccess() {
+        pg.dismiss();
         Toast.makeText(this, "Saved Data", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, NavigationDrawerActivity.class);
         startActivity(intent);
@@ -81,6 +88,7 @@ public class EditProfileActivity extends AppCompatActivity {
     }
 
     public void onSignupFailed() {
+        pg.dismiss();
         Toast.makeText(this, "Not Saved", Toast.LENGTH_LONG).show();
     }
 

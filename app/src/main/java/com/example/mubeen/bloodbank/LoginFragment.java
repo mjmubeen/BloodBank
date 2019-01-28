@@ -1,5 +1,6 @@
 package com.example.mubeen.bloodbank;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -34,7 +35,6 @@ import java.util.regex.Pattern;
 
 public class LoginFragment extends Fragment implements OnClickListener {
 	private View view;
-
 	private EditText emailId, password;
 	private Button loginButton;
 	private TextView forgotPassword, signUp;
@@ -43,6 +43,7 @@ public class LoginFragment extends Fragment implements OnClickListener {
 	private static Animation shakeAnimation;
 	private static FragmentManager fragmentManager;
 	private FirebaseAuth firebaseAuth;
+	ProgressDialog pg;
 
 	public LoginFragment() {
 
@@ -158,7 +159,12 @@ public class LoginFragment extends Fragment implements OnClickListener {
 			Toast.makeText(getActivity(), "Password must be at least 6 characters", Toast.LENGTH_SHORT).show();
 		// Else do login and do your stuff
 		else
-			checkInFirebase(getEmailId, getPassword);
+        {
+            pg = new ProgressDialog(getActivity());
+            pg.setMessage("Please Wait....");
+            pg.show();
+            checkInFirebase(getEmailId, getPassword);
+	    }
 
 	}
 
@@ -171,10 +177,12 @@ public class LoginFragment extends Fragment implements OnClickListener {
 						if (!task.isSuccessful()) {
 							Toast.makeText(getActivity(), "Authentication Failed", Toast.LENGTH_LONG).show();
 							Log.v("error", task.getResult().toString());
+							pg.dismiss();
 						}
 						else {
 							Intent intent = new Intent(getActivity(), NavigationDrawerActivity.class);
 							startActivity(intent);
+							pg.dismiss();
                             new MainActivity().finish();
 						}
 					}
