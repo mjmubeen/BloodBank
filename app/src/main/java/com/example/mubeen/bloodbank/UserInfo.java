@@ -1,7 +1,7 @@
 package com.example.mubeen.bloodbank;
 
 public class UserInfo {
-    private String Id, Name, Mobile, Location, Blood, Gender, Birth;
+    private String id, name, mobile, location, blood, gender, birth;
 
     // Default constructor required for calls to
     // DataSnapshot.getValue(User.class)
@@ -9,68 +9,68 @@ public class UserInfo {
     }
 
     public UserInfo (String id, String name, String mobile, String location, String blood, String gender, String birth) {
-        this.Id = id;
-        this.Name = name;
-        this.Mobile = mobile;
-        this.Location = location;
-        this.Blood = blood;
-        this.Gender = gender;
-        this.Birth = birth;
+        this.id = id;
+        this.name = name;
+        this.mobile = mobile;
+        this.location = location;
+        this.blood = blood;
+        this.gender = gender;
+        this.birth = birth;
     }
 
     public String getId() {
-        return Id;
+        return id;
     }
 
     public void setId(String id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getMobile() {
-        return Mobile;
+        return mobile;
     }
 
     public void setMobile(String mobile) {
-        Mobile = mobile;
+        this.mobile = mobile;
     }
 
     public String getLocation() {
-        return Location;
+        return location;
     }
 
     public void setLocation(String location) {
-        Location = location;
+        this.location = location;
     }
 
     public String getBlood() {
-        return Blood;
+        return blood;
     }
 
     public void setBlood(String blood) {
-        Blood = blood;
+        this.blood = blood;
     }
 
     public String getGender() {
-        return Gender;
+        return gender;
     }
 
     public void setGender(String gender) {
-        Gender = gender;
+        this.gender = gender;
     }
 
     public String getBirth() {
-        return Birth;
+        return birth;
     }
 
     public void setBirth(String birth) {
-        Birth = birth;
+        this.birth = birth;
     }
 }
