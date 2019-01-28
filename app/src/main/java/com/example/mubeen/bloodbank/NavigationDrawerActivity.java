@@ -79,18 +79,14 @@ public class NavigationDrawerActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.Doner1)
+        if (id == R.id.doners)
         {
 
-        } else if (id == R.id.Bloodsgroup) {
+        } else if (id == R.id.bloodsgroup) {
 
-        } else if (id == R.id.Save) {
+        } else if (id == R.id.saved_donors) {
 
         } else if (id == R.id.Info) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
 
         }
 

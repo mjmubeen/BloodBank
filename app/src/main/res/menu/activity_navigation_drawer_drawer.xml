@@ -5,15 +5,15 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/Doner1"
+            android:id="@+id/doners"
             android:icon="@drawable/ic_person_"
             android:title="@string/donors" />
         <item
-            android:id="@+id/Bloodsgroup"
+            android:id="@+id/bloodsgroup"
             android:icon="@drawable/ic_folder"
             android:title="@string/blood_group" />
         <item
-            android:id="@+id/Save"
+            android:id="@+id/saved_donors"
             android:icon="@drawable/ic_save"
             android:title="@string/saved_donors" />
         <item
@@ -21,18 +21,5 @@
             android:icon="@drawable/info"
             android:title="@string/blood_banks" />
     </group>
-
-    <item android:title="@string/communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="@string/share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/send" />
-        </menu>
-    </item>
 
 </menu>

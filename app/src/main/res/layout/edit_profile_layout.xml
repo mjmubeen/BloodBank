@@ -11,23 +11,24 @@
         android:layout_width="0dp"
         android:layout_height="83dp"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="18dp"
-        android:layout_marginBottom="21dp"
+        android:layout_marginTop="11dp"
         android:layout_weight="5.21"
         android:contentDescription="@string/user_image"
-        app:layout_constraintBottom_toTopOf="@+id/text_Add_User_Name"
+        android:src="@drawable/user"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/user" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/text_Add_User_Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="107dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="142dp"
+        android:layout_marginBottom="146dp"
         android:text="@string/add_name"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/text_Blood_type"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,81 +36,83 @@
         android:id="@+id/add_User_Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="32dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/add_enter_your_name"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/add_Phone_Number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_logo"
         tools:targetApi="o" />
 
     <EditText
         android:id="@+id/add_Phone_Number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="49dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/add_enter_your_number"
         android:inputType="phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_User_Name"
+        app:layout_constraintBottom_toTopOf="@+id/Add_Spinner_Blood_type"
+        app:layout_constraintStart_toStartOf="@+id/add_User_Name"
         tools:targetApi="o" />
 
     <TextView
         android:id="@+id/text_Add_Mobile_Number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
         android:text="@string/add_mobile"
         android:textSize="24sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/add_Phone_Number"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_Add_User_Name" />
 
     <TextView
         android:id="@+id/text_Blood_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="320dp"
         android:text="@string/add_blood_type"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/Add_Spinner_Blood_type" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/Add_Spinner_Blood_type"
         android:layout_width="0dp"
         android:layout_height="68dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="81dp"
+        android:layout_marginBottom="81dp"
         android:ems="10"
         android:entries="@array/blood_type"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/Add_Spinner_City"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/text_Blood_type"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/add_User_Name"
+        app:layout_constraintTop_toTopOf="@+id/text_Add_Mobile_Number" />
 
     <TextView
         android:id="@+id/text_Add_City"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="158dp"
+        android:layout_marginStart="28dp"
         android:text="@string/add_city"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/Add_Spinner_City"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
         android:id="@+id/Add_Spinner_City"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginTop="103dp"
-        android:layout_marginBottom="103dp"
+        android:layout_marginTop="47dp"
         android:entries="@array/panch"
-        app:layout_constraintBottom_toBottomOf="@+id/add_Save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/Add_Spinner_Blood_type"
-        app:layout_constraintTop_toBottomOf="@+id/add_Phone_Number" />
+        app:layout_constraintTop_toBottomOf="@+id/text_Blood_type" />
 
 
     <Button
@@ -117,13 +120,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="120dp"
-        android:layout_marginBottom="42dp"
+        android:layout_marginTop="67dp"
         android:background="#f31c45"
         android:onClick="Save"
         android:text="@string/save_data"
         android:textColor="#fff"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Add_Spinner_City" />
 
 </android.support.constraint.ConstraintLayout>
