@@ -1,9 +1,11 @@
 package com.example.mubeen.bloodbank;
 
+import android.content.Intent;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -17,6 +19,8 @@ import com.google.firebase.database.ValueEventListener;
 public class ProfileActivity extends AppCompatActivity {
 
     TextView email, name, mobile, location, blood, gender, birth;
+    FirebaseAuth mAuth;
+    FirebaseUser firebaseUser;
     String userId;
     private static final String TAG = "ProfileActivity";
 
@@ -31,20 +35,21 @@ public class ProfileActivity extends AppCompatActivity {
         blood = findViewById(R.id.tv_blood);
         gender = findViewById(R.id.profileGenderText);
         birth = findViewById(R.id.profileDateText);
-        FirebaseAuth mAuth = FirebaseAuth.getInstance();
-        FirebaseUser firebaseUser = mAuth.getCurrentUser();
+        mAuth = FirebaseAuth.getInstance();
+        firebaseUser = mAuth.getCurrentUser();
         userId = firebaseUser.getUid();
         getDataFromFirebase();
     }
 
     private void getDataFromFirebase() {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Users");
+        DatabaseReference myRef = database.getReference("Users").child(userId);
 
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-
+                UserInfo userInfo = dataSnapshot.getValue(UserInfo.class);
+                change(userInfo);
             }
 
             @Override
@@ -63,4 +68,8 @@ public class ProfileActivity extends AppCompatActivity {
         birth.setText(user.getBirth());
     }
 
+    public void EditProfile(View view) {
+        Intent intent = new Intent(this, EditProfileActivity.class);
+        startActivity(intent);
+    }
 }
