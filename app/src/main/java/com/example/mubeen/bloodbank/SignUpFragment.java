@@ -92,13 +92,16 @@ public class SignUpFragment extends Fragment implements OnClickListener {
 		Matcher m = p.matcher(getEmailId);
 
 		// Check if all strings are null or not
-		if (getEmailId.equals("") || getEmailId.length() == 0 || getPassword.equals("") || getPassword.length() == 0 || getPassword.length() < 6
-				|| getConfirmPassword.equals("") || getConfirmPassword.length() == 0 || getConfirmPassword.length() < 6)
-			Toast.makeText(getActivity(),  "All fields are required.", Toast.LENGTH_SHORT).show();
-
+		if (getEmailId.equals("") || getEmailId.length() == 0 || getPassword.equals("") || getPassword.length() == 0
+				|| getConfirmPassword.equals("") || getConfirmPassword.length() == 0) {
+			Toast.makeText(getActivity(), "All fields are required.", Toast.LENGTH_SHORT).show();
+		}
 		// Check if email id valid or not
 		else if (!m.find())
 			Toast.makeText(getActivity(),  "Your Email Id is Invalid.", Toast.LENGTH_SHORT).show();
+
+		else if(getPassword.length() < 5 || getConfirmPassword.length() < 5)
+			Toast.makeText(getActivity(), "Password must be at least 6 characters", Toast.LENGTH_SHORT).show();
 
 		// Check if both password should be equal
 		else if (!getConfirmPassword.equals(getPassword))
@@ -125,7 +128,7 @@ public class SignUpFragment extends Fragment implements OnClickListener {
 							//Log.v("error", task.getResult().toString());
 						}
 						else {
-							Intent intent = new Intent(getActivity(), NavigationDrawerActivity.class);
+							Intent intent = new Intent(getActivity(), EditProfileActivity.class);
 							startActivity(intent);
 							new MainActivity().finish();
 						}

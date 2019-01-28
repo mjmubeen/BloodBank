@@ -145,7 +145,7 @@ public class LoginFragment extends Fragment implements OnClickListener {
 		Matcher m = p.matcher(getEmailId);
 
 		// Check for both field is empty or not
-		if (getEmailId.equals("") || getEmailId.length() == 0 || getPassword.equals("") || getPassword.length() == 0 || getPassword.length() < 6) {
+		if (getEmailId.equals("") || getEmailId.length() == 0 || getPassword.equals("") || getPassword.length() == 0) {
 			loginLayout.startAnimation(shakeAnimation);
 			Toast.makeText(getActivity(), "Enter both credentials.", Toast.LENGTH_SHORT).show();
 
@@ -153,6 +153,9 @@ public class LoginFragment extends Fragment implements OnClickListener {
 		// Check if email id is valid or not
 		else if (!m.find())
 			Toast.makeText(getActivity(), "Your Email Id is Invalid.", Toast.LENGTH_SHORT).show();
+
+		else if(getPassword.length() < 5)
+			Toast.makeText(getActivity(), "Password must be at least 6 characters", Toast.LENGTH_SHORT).show();
 		// Else do login and do your stuff
 		else
 			checkInFirebase(getEmailId, getPassword);

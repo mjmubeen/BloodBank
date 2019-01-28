@@ -23,14 +23,6 @@
           }
         },
         {
-          "client_id": "1092922194298-jqepaf2bi88l1ivtuiuccbfrlnicgfa9.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.mubeen.bloodbank",
-            "certificate_hash": "a91185102ac193a8294cddfd59b1c4b5f6d12c2a"
-          }
-        },
-        {
           "client_id": "1092922194298-881tc8eolr1tbea7gc1e4cv3i8vpm7n4.apps.googleusercontent.com",
           "client_type": 3
         }
