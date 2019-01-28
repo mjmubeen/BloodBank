@@ -5,8 +5,7 @@ public class UserInfo {
 
     // Default constructor required for calls to
     // DataSnapshot.getValue(User.class)
-    public UserInfo() {
-    }
+    public UserInfo() { }
 
     public UserInfo (String id, String name, String mobile, String location, String blood, String gender, String birth) {
         this.id = id;
@@ -18,59 +17,31 @@ public class UserInfo {
         this.birth = birth;
     }
 
-    public String getId() {
-        return id;
-    }
+    public String getId() { return id; }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+    public void setId(String id) { this.id = id; }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public void setName(String name) { this.name = name; }
 
-    public String getMobile() {
-        return mobile;
-    }
+    public String getMobile() { return mobile; }
 
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
-    }
+    public void setMobile(String mobile) { this.mobile = mobile; }
 
-    public String getLocation() {
-        return location;
-    }
+    public String getLocation() { return location; }
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
+    public void setLocation(String location) { this.location = location; }
 
-    public String getBlood() {
-        return blood;
-    }
+    public String getBlood() { return blood; }
 
-    public void setBlood(String blood) {
-        this.blood = blood;
-    }
+    public void setBlood(String blood) { this.blood = blood; }
 
-    public String getGender() {
-        return gender;
-    }
+    public String getGender() { return gender; }
 
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
+    public void setGender(String gender) { this.gender = gender; }
 
-    public String getBirth() {
-        return birth;
-    }
+    public String getBirth() { return birth; }
 
-    public void setBirth(String birth) {
-        this.birth = birth;
-    }
+    public void setBirth(String birth) { this.birth = birth; }
 }
