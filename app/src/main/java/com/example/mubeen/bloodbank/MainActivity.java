@@ -1,12 +1,9 @@
 package com.example.mubeen.bloodbank;
 
 import android.os.Bundle;
-import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.view.View.OnClickListener;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -17,7 +14,7 @@ public class MainActivity extends AppCompatActivity
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.main_layout);
 		fragmentManager = getSupportFragmentManager();
 
 		// If savedinstnacestate is null then replace login fragment

@@ -18,7 +18,7 @@ public class EditProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add);
+        setContentView(R.layout.edit_profile_layout);
         nameText = findViewById(R.id.add_User_Name);
         mobileText = findViewById(R.id.add_Phone_Number);
         B_type = (Spinner) findViewById(R.id.Add_Spinner_Blood_type);
