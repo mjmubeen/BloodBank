@@ -44,7 +44,6 @@ public class ProfileActivity extends AppCompatActivity {
     private void getDataFromFirebase() {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Users").child(userId);
-
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -60,6 +59,8 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void change(UserInfo user) {
+        String Email = firebaseUser.getEmail();
+        email.setText(Email);
         name.setText(user.getName());
         mobile.setText(user.getMobile());
         location.setText(user.getLocation());
