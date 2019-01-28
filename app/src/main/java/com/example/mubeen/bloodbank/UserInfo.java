@@ -1,58 +1,76 @@
 package com.example.mubeen.bloodbank;
 
 public class UserInfo {
-    String id, name, mobile, location, blood;
+    private String Id, Name, Mobile, Location, Blood, Gender, Birth;
 
     // Default constructor required for calls to
     // DataSnapshot.getValue(User.class)
     public UserInfo() {
     }
 
-    public UserInfo (String id, String name, String mobile, String location, String blood) {
-        this.id = id;
-        this.name = name;
-        this.mobile = mobile;
-        this.location = location;
-        this.blood = blood;
+    public UserInfo (String id, String name, String mobile, String location, String blood, String gender, String birth) {
+        this.Id = id;
+        this.Name = name;
+        this.Mobile = mobile;
+        this.Location = location;
+        this.Blood = blood;
+        this.Gender = gender;
+        this.Birth = birth;
     }
 
     public String getId() {
-        return id;
+        return Id;
     }
 
     public void setId(String id) {
-        this.id = id;
+        Id = id;
     }
 
     public String getName() {
-        return name;
+        return Name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        Name = name;
     }
 
     public String getMobile() {
-        return mobile;
+        return Mobile;
     }
 
     public void setMobile(String mobile) {
-        this.mobile = mobile;
+        Mobile = mobile;
     }
 
     public String getLocation() {
-        return location;
+        return Location;
     }
 
     public void setLocation(String location) {
-        this.location = location;
+        Location = location;
     }
 
     public String getBlood() {
-        return blood;
+        return Blood;
     }
 
     public void setBlood(String blood) {
-        this.blood = blood;
+        Blood = blood;
+    }
+
+    public String getGender() {
+        return Gender;
+    }
+
+    public void setGender(String gender) {
+        Gender = gender;
+    }
+
+    public String getBirth() {
+        return Birth;
+    }
+
+    public void setBirth(String birth) {
+        Birth = birth;
     }
 }
