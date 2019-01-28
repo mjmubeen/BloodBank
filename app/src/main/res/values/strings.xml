@@ -21,4 +21,13 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
+    <string name="blood_bank">Blood Bank</string>
+    <string name="danyal_ucp_edu_pk">danyal@ucp.edu.pk</string>
+    <string name="donors">Donors</string>
+    <string name="blood_group">Blood Group</string>
+    <string name="saved_donors">Saved Donors</string>
+    <string name="blood_banks">Blood Banks</string>
+    <string name="communicate">Communicate</string>
+    <string name="share">Share</string>
+    <string name="send">Send</string>
 </resources>

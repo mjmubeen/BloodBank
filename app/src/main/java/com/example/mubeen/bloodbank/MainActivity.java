@@ -1,14 +1,18 @@
 package com.example.mubeen.bloodbank;
 
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+{
 	private static FragmentManager fragmentManager;
+
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

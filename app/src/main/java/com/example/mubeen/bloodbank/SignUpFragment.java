@@ -122,7 +122,7 @@ public class SignUpFragment extends Fragment implements OnClickListener {
 					public void onComplete(@NonNull Task<AuthResult> task) {
 						if (!task.isSuccessful()) {
 							Toast.makeText(getActivity(), "Signup Failed", Toast.LENGTH_LONG).show();
-							Log.v("error", task.getResult().toString());
+							//Log.v("error", task.getResult().toString());
 						}
 						else {
 							Intent intent = new Intent(getActivity(), NavigationDrawerActivity.class);
