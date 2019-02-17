@@ -137,7 +137,7 @@ public class SignUpFragment extends Fragment implements OnClickListener {
 							Intent intent = new Intent(getActivity(), EditProfileActivity.class);
 							startActivity(intent);
 							pg.dismiss();
-							new MainActivity().finish();
+							getActivity().finish();
 						}
 					}
 				});

@@ -183,7 +183,7 @@ public class LoginFragment extends Fragment implements OnClickListener {
 							Intent intent = new Intent(getActivity(), NavigationDrawerActivity.class);
 							startActivity(intent);
 							pg.dismiss();
-                            new MainActivity().finish();
+							getActivity().finish();
 						}
 					}
 				});
