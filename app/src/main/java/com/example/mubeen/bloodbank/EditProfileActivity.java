@@ -94,7 +94,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
     public boolean validate(String name, String mobile) {
         boolean valid = true;
-
+        valid = databtn;
         if (name.isEmpty() || name.length() < 2) {
             nameText.setError("at least 2 characters");
             valid = false;
@@ -110,7 +110,6 @@ public class EditProfileActivity extends AppCompatActivity {
         else {
             mobileText.setError(null);
         }
-        valid = databtn;
         return valid;
     }
 

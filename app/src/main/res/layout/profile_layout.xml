@@ -26,10 +26,10 @@
                 android:layout_margin="9dp"
                 android:adjustViewBounds="true"
                 android:background="@drawable/circle"
+                android:contentDescription="@string/profile_image_in_profile"
                 android:padding="3dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/user"
-                android:contentDescription="@string/profile_image_in_profile" />
+                android:src="@drawable/user" />
 
         </RelativeLayout>
 
