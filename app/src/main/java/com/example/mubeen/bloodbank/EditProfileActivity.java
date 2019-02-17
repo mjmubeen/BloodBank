@@ -3,6 +3,8 @@ package com.example.mubeen.bloodbank;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -49,7 +51,7 @@ public class EditProfileActivity extends AppCompatActivity {
         int mDay = c.get(Calendar.DAY_OF_MONTH);
 
         databtn = true;
-        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this,android.R.style.Theme_Holo_Light_Dialog_MinWidth,
                 new DatePickerDialog.OnDateSetListener() {
 
                     @Override
@@ -57,6 +59,7 @@ public class EditProfileActivity extends AppCompatActivity {
                         birthText.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
                     }
                 }, mYear, mMonth, mDay);
+        datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         datePickerDialog.show();
     }
 
@@ -115,9 +118,7 @@ public class EditProfileActivity extends AppCompatActivity {
         else {
             mobileText.setError(null);
         }
-        if(databtn && validName && validMobile)
-            return true;
-        return false;
+        return (databtn && validName && validMobile);
     }
 
     void saveInFirebase(String name, String mobile, String location, String blood, String gender, String birth)
