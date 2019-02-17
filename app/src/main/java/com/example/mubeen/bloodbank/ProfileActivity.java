@@ -1,5 +1,6 @@
 package com.example.mubeen.bloodbank;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.nfc.Tag;
 import android.os.Bundle;
@@ -23,9 +24,13 @@ public class ProfileActivity extends AppCompatActivity {
     FirebaseUser firebaseUser;
     String userId;
     private static final String TAG = "ProfileActivity";
+    ProgressDialog pg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        pg = new ProgressDialog(this);
+        pg.setMessage("Please Wait....");
+        pg.show();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_layout);
         email = findViewById(R.id.profileEmailText);
@@ -67,6 +72,7 @@ public class ProfileActivity extends AppCompatActivity {
         blood.setText(user.getBlood());
         gender.setText(user.getGender());
         birth.setText(user.getBirth());
+        pg.dismiss();
     }
 
     public void EditProfile(View view) {
