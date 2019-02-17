@@ -93,11 +93,16 @@ public class EditProfileActivity extends AppCompatActivity {
     }
 
     public boolean validate(String name, String mobile) {
-        boolean valid = true;
-        valid = databtn;
+        boolean validName = true, validMobile = true;
+        if(!databtn){
+            birthText.setError("Please select a date");
+        }
+        else{
+            birthText.setError(null);
+        }
         if (name.isEmpty() || name.length() < 2) {
             nameText.setError("at least 2 characters");
-            valid = false;
+            validName = false;
         }
         else {
             nameText.setError(null);
@@ -105,12 +110,14 @@ public class EditProfileActivity extends AppCompatActivity {
 
         if (mobile.isEmpty() || mobileText.length() < 10 || mobile.length() > 11) {
             mobileText.setError("invalid mobile number");
-            valid = false;
+            validMobile = false;
         }
         else {
             mobileText.setError(null);
         }
-        return valid;
+        if(databtn && validName && validMobile)
+            return true;
+        return false;
     }
 
     void saveInFirebase(String name, String mobile, String location, String blood, String gender, String birth)
@@ -131,5 +138,4 @@ public class EditProfileActivity extends AppCompatActivity {
             }
         });
     }
-
 }
