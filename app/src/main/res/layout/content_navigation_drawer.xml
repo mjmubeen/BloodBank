@@ -8,4 +8,8 @@
     tools:context=".NavigationDrawerActivity"
     tools:showIn="@layout/app_bar_navigation_drawer">
 
+
+    <include layout="@layout/recycle_view_layout" />
+
+
 </android.support.constraint.ConstraintLayout>
