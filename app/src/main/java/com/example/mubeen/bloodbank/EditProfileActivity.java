@@ -64,6 +64,9 @@ public class EditProfileActivity extends AppCompatActivity {
     }
 
     public void Save(View view) {
+        pg = new ProgressDialog(this);
+        pg.setMessage("Saving....");
+        pg.show();
 
         String name = nameText.getText().toString();
         String mobile = mobileText.getText().toString();
@@ -73,12 +76,10 @@ public class EditProfileActivity extends AppCompatActivity {
         String gender = Gender.getSelectedItem().toString();
         if (!validate(name,mobile)) {
             onSignupFailed();
-            return;
         }
-        pg = new ProgressDialog(this);
-        pg.setMessage("Saving....");
-        pg.show();
-        saveInFirebase(name, mobile, location, blood, gender, birth);
+        else {
+            saveInFirebase(name, mobile, location, blood, gender, birth);
+        }
     }
 
 
