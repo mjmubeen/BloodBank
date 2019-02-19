@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity
 		super.onStart();
 		if(firebaseAuth.getCurrentUser()!= null){
             this.finish();
-            Intent intent = new Intent(this, EditProfileActivity.class);
+            Intent intent = new Intent(this, NavigationDrawerActivity.class);
             startActivity(intent);
         }
 	}

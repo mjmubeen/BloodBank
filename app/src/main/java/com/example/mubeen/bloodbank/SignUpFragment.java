@@ -133,7 +133,7 @@ public class SignUpFragment extends Fragment implements OnClickListener {
 								pg.dismiss();
 							} else {
 								Objects.requireNonNull(getActivity()).finish();
-								Intent intent = new Intent(getActivity(), NavigationDrawerActivity.class);
+								Intent intent = new Intent(getActivity(), EditProfileActivity.class);
 								startActivity(intent);
 								pg.dismiss();
 							}
