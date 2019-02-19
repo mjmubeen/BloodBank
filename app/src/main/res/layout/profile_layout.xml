@@ -82,7 +82,7 @@
             android:contentDescription="@string/profileSetting"
             android:onClick="EditProfile"
             android:scaleType="centerInside"
-            android:src="@drawable/ic_settings" />
+            android:src="@drawable/editprofile" />
 
     </RelativeLayout>
 
