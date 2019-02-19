@@ -10,8 +10,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class Search {
-    private UserInfo userInfo;
+    private ArrayList<UserInfo> data;
 
     Search(){
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -43,11 +45,6 @@ public class Search {
 
             }
         });
-    }
-
-    UserInfo getUserInfo()
-    {
-        return userInfo;
     }
 
 }

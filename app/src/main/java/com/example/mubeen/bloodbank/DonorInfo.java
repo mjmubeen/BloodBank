@@ -30,11 +30,6 @@ public class DonorInfo extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
         ArrayList<UserInfo> data = new ArrayList<UserInfo>();
-        for (int i = 0; i < 5; i++) {
-            data.add(new UserInfo(
-
-            ));
-        }
 
         RecyclerView.Adapter adapter = new CustomAdapter(data);
         recyclerView.setAdapter(adapter);
