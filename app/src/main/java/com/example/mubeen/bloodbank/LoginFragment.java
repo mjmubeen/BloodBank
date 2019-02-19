@@ -30,6 +30,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -171,18 +172,18 @@ public class LoginFragment extends Fragment implements OnClickListener {
 	private void checkInFirebase(String getEmailId, String getPassword) {
 		try {
 			firebaseAuth.signInWithEmailAndPassword(getEmailId, getPassword)
-					.addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
+					.addOnCompleteListener(Objects.requireNonNull(getActivity()), new OnCompleteListener<AuthResult>() {
 						@Override
 						public void onComplete(@NonNull Task<AuthResult> task) {
 							if (!task.isSuccessful()) {
 								Toast.makeText(getActivity(), "Authentication Failed", Toast.LENGTH_LONG).show();
-								Log.v("error", task.getResult().toString());
+								Log.v("error", Objects.requireNonNull(task.getResult()).toString());
 								pg.dismiss();
 							} else {
+								Objects.requireNonNull(getActivity()).finish();
 								Intent intent = new Intent(getActivity(), NavigationDrawerActivity.class);
 								startActivity(intent);
 								pg.dismiss();
-								getActivity().finish();
 							}
 						}
 					});

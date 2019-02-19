@@ -1,22 +1,33 @@
 package com.example.mubeen.bloodbank;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity
 {
 	private static FragmentManager fragmentManager;
-
-
+	private FirebaseAuth firebaseAuth;
+	@Override
+	protected void onStart() {
+		super.onStart();
+		if(firebaseAuth.getCurrentUser()!= null){
+            this.finish();
+            Intent intent = new Intent(this, EditProfileActivity.class);
+            startActivity(intent);
+        }
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_layout);
 		fragmentManager = getSupportFragmentManager();
-
+        firebaseAuth = FirebaseAuth.getInstance();
 		// If savedinstnacestate is null then replace login fragment
 		if (savedInstanceState == null) {
 			fragmentManager.beginTransaction().replace(R.id.frameContainer, new LoginFragment(), Utils.Login_Fragment).commit();
