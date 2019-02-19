@@ -74,8 +74,10 @@ public class NavigationDrawerActivity extends AppCompatActivity
             Intent intent = new Intent(this, ProfileActivity.class);
             startActivity(intent);
         }
-        else if (id == R.id.doners) {
-
+        else if (id == R.id.doners)
+        {
+            Intent intent = new Intent(this, DonorInfo.class);
+            startActivity(intent);
         }
         else if (id == R.id.bloodsgroup) {
 
@@ -86,6 +88,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
         else if (id == R.id.Info) {
 
         }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

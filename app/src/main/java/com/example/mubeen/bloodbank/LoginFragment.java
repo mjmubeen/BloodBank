@@ -168,24 +168,28 @@ public class LoginFragment extends Fragment implements OnClickListener {
 
 	}
 
-	private void checkInFirebase(String getEmailId, String getPassword)
-	{
-		firebaseAuth.signInWithEmailAndPassword(getEmailId, getPassword)
-				.addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
-					@Override
-					public void onComplete(@NonNull Task<AuthResult> task) {
-						if (!task.isSuccessful()) {
-							Toast.makeText(getActivity(), "Authentication Failed", Toast.LENGTH_LONG).show();
-							Log.v("error", task.getResult().toString());
-							pg.dismiss();
+	private void checkInFirebase(String getEmailId, String getPassword) {
+		try {
+			firebaseAuth.signInWithEmailAndPassword(getEmailId, getPassword)
+					.addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
+						@Override
+						public void onComplete(@NonNull Task<AuthResult> task) {
+							if (!task.isSuccessful()) {
+								Toast.makeText(getActivity(), "Authentication Failed", Toast.LENGTH_LONG).show();
+								Log.v("error", task.getResult().toString());
+								pg.dismiss();
+							} else {
+								Intent intent = new Intent(getActivity(), NavigationDrawerActivity.class);
+								startActivity(intent);
+								pg.dismiss();
+								getActivity().finish();
+							}
 						}
-						else {
-							Intent intent = new Intent(getActivity(), NavigationDrawerActivity.class);
-							startActivity(intent);
-							pg.dismiss();
-							getActivity().finish();
-						}
-					}
-				});
+					});
+		}
+		catch(Exception e)
+		{
+			Toast.makeText(getActivity(),  "Error " + e.getMessage(), Toast.LENGTH_SHORT).show();
+		}
 	}
 }

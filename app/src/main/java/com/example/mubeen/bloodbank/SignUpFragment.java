@@ -123,23 +123,27 @@ public class SignUpFragment extends Fragment implements OnClickListener {
 
 	}
 
-	private void saveFirebase(String getEmailId, String getPassword)
-	{
-		firebaseAuth.createUserWithEmailAndPassword(getEmailId, getPassword)
-				.addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
-					@Override
-					public void onComplete(@NonNull Task<AuthResult> task) {
-						if (!task.isSuccessful()) {
-							Toast.makeText(getActivity(), "Signup Failed", Toast.LENGTH_LONG).show();
-							pg.dismiss();
+	private void saveFirebase(String getEmailId, String getPassword) {
+		try {
+			firebaseAuth.createUserWithEmailAndPassword(getEmailId, getPassword)
+					.addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
+						@Override
+						public void onComplete(@NonNull Task<AuthResult> task) {
+							if (!task.isSuccessful()) {
+								Toast.makeText(getActivity(), "Signup Failed", Toast.LENGTH_LONG).show();
+								pg.dismiss();
+							} else {
+								Intent intent = new Intent(getActivity(), EditProfileActivity.class);
+								startActivity(intent);
+								pg.dismiss();
+								getActivity().finish();
+							}
 						}
-						else {
-							Intent intent = new Intent(getActivity(), EditProfileActivity.class);
-							startActivity(intent);
-							pg.dismiss();
-							getActivity().finish();
-						}
-					}
-				});
+					});
+		}
+		catch(Exception e)
+		{
+			Toast.makeText(getActivity(),  "Error " + e.getMessage(), Toast.LENGTH_SHORT).show();
+		}
 	}
 }
