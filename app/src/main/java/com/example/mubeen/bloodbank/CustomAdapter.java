@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -30,11 +31,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(@NonNull CustomAdapter.MyViewHolder holder, int position) {
+        ImageView imageViewPerson = holder.imageViewPerson;
         TextView textViewName = holder.textViewName;
         TextView textViewBlood = holder.textViewBlood;
         TextView textViewGender = holder.textViewGender;
         TextView textViewLocation = holder.textViewLocation;
-
+        imageViewPerson.setImageResource(R.drawable.user);
         textViewName.setText(users.get(position).getName());
         textViewBlood.setText(users.get(position).getBlood());
         textViewGender.setText(users.get(position).getGender());
@@ -48,7 +50,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     class MyViewHolder extends RecyclerView.ViewHolder
     {
-
+        ImageView imageViewPerson;
         TextView textViewName;
         TextView textViewBlood;
         TextView textViewGender;
@@ -56,6 +58,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
         MyViewHolder(@NonNull View itemView) {
             super(itemView);
+            this.imageViewPerson = itemView.findViewById(R.id.Person);
             this.textViewName = itemView.findViewById(R.id.Person_Name);
             this.textViewBlood = itemView.findViewById(R.id.Person_Blood);
             this.textViewGender =  itemView.findViewById(R.id.Person_Gender);
