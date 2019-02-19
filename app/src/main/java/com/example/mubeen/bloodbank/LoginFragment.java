@@ -35,6 +35,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class LoginFragment extends Fragment implements OnClickListener {
+
 	private View view;
 	private EditText emailId, password;
 	private Button loginButton;
@@ -113,6 +114,7 @@ public class LoginFragment extends Fragment implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
+
 		case R.id.loginBtn:
 			checkValidation();
 			break;
@@ -159,14 +161,12 @@ public class LoginFragment extends Fragment implements OnClickListener {
 		else if(getPassword.length() < 5)
 			Toast.makeText(getActivity(), "Password must be at least 6 characters", Toast.LENGTH_SHORT).show();
 		// Else do login and do your stuff
-		else
-        {
+		else {
             pg = new ProgressDialog(getActivity());
             pg.setMessage("Please Wait....");
             pg.show();
             checkInFirebase(getEmailId, getPassword);
 	    }
-
 	}
 
 	private void checkInFirebase(String getEmailId, String getPassword) {
@@ -179,7 +179,8 @@ public class LoginFragment extends Fragment implements OnClickListener {
 								Toast.makeText(getActivity(), "Authentication Failed", Toast.LENGTH_LONG).show();
 								Log.v("error", Objects.requireNonNull(task.getResult()).toString());
 								pg.dismiss();
-							} else {
+							}
+							else {
 								Objects.requireNonNull(getActivity()).finish();
 								Intent intent = new Intent(getActivity(), NavigationDrawerActivity.class);
 								startActivity(intent);
@@ -188,8 +189,7 @@ public class LoginFragment extends Fragment implements OnClickListener {
 						}
 					});
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			Toast.makeText(getActivity(),  "Error " + e.getMessage(), Toast.LENGTH_SHORT).show();
 		}
 	}

@@ -1,5 +1,7 @@
 package com.example.mubeen.bloodbank;
 
+
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,55 +11,55 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-
-
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
 
-    private ArrayList<UserInfo> dataSet;
+    private Context context;
+    private ArrayList<UserInfo> users;
 
-    class MyViewHolder extends RecyclerView.ViewHolder {
+    CustomAdapter(Context context, ArrayList<UserInfo> users)
+    {
+        this.context = context;
+        this.users = users;
+    }
+
+    @NonNull
+    @Override
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.donor_info_layout,parent,false));
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull CustomAdapter.MyViewHolder holder, int position) {
+        TextView textViewName = holder.textViewName;
+        TextView textViewBlood = holder.textViewBlood;
+        TextView textViewGender = holder.textViewGender;
+        TextView textViewLocation = holder.textViewLocation;
+
+        textViewName.setText(users.get(position).getName());
+        textViewBlood.setText(users.get(position).getBlood());
+        textViewGender.setText(users.get(position).getGender());
+        textViewLocation.setText(users.get(position).getLocation());
+    }
+
+    @Override
+    public int getItemCount() {
+        return users.size();
+    }
+
+    class MyViewHolder extends RecyclerView.ViewHolder
+    {
 
         TextView textViewName;
         TextView textViewBlood;
         TextView textViewGender;
         TextView textViewLocation;
 
-        MyViewHolder(View itemView) {
+        MyViewHolder(@NonNull View itemView) {
             super(itemView);
             this.textViewName = itemView.findViewById(R.id.Person_Name);
             this.textViewBlood = itemView.findViewById(R.id.Person_Blood);
             this.textViewGender =  itemView.findViewById(R.id.Person_Gender);
             this.textViewLocation = itemView.findViewById(R.id.Person_Location);
         }
-    }
-
-    CustomAdapter(ArrayList<UserInfo> data) {
-        this.dataSet = data;
-    }
-
-    @NonNull
-    @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.donor_info_layout, parent, false);
-        return new MyViewHolder(view);
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull final MyViewHolder holder, final int listPosition) {
-
-        TextView textViewName = holder.textViewName;
-        TextView textViewBlood = holder.textViewBlood;
-        TextView textViewGender = holder.textViewGender;
-        TextView textViewLocation = holder.textViewLocation;
-
-        textViewName.setText(dataSet.get(listPosition).getName());
-        textViewBlood.setText(dataSet.get(listPosition).getBlood());
-        textViewGender.setText(dataSet.get(listPosition).getGender());
-        textViewLocation.setText(dataSet.get(listPosition).getLocation());
-    }
-
-    @Override
-    public int getItemCount() {
-        return dataSet.size();
     }
 }
