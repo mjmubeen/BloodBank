@@ -38,7 +38,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.donar_info_layout, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.donor_info_layout, parent, false);
         return new MyViewHolder(view);
     }
 
