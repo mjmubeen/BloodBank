@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -21,7 +20,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import java.util.concurrent.Executor;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -126,17 +125,17 @@ public class SignUpFragment extends Fragment implements OnClickListener {
 	private void saveFirebase(String getEmailId, String getPassword) {
 		try {
 			firebaseAuth.createUserWithEmailAndPassword(getEmailId, getPassword)
-					.addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
+					.addOnCompleteListener(Objects.requireNonNull(getActivity()), new OnCompleteListener<AuthResult>() {
 						@Override
 						public void onComplete(@NonNull Task<AuthResult> task) {
 							if (!task.isSuccessful()) {
 								Toast.makeText(getActivity(), "Signup Failed", Toast.LENGTH_LONG).show();
 								pg.dismiss();
 							} else {
-								Intent intent = new Intent(getActivity(), EditProfileActivity.class);
+								Objects.requireNonNull(getActivity()).finish();
+								Intent intent = new Intent(getActivity(), NavigationDrawerActivity.class);
 								startActivity(intent);
 								pg.dismiss();
-								getActivity().finish();
 							}
 						}
 					});
