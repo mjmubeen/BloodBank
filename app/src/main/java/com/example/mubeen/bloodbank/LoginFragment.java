@@ -190,6 +190,7 @@ public class LoginFragment extends Fragment implements OnClickListener {
 					});
 		}
 		catch(Exception e) {
+			pg.dismiss();
 			Toast.makeText(getActivity(),  "Error " + e.getMessage(), Toast.LENGTH_SHORT).show();
 		}
 	}
