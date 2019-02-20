@@ -25,6 +25,7 @@
         <activity android:name=".EditProfileActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".DonorInfo" />
+        <activity android:name=".BloodBanks" />
     </application>
 
 </manifest>
