@@ -85,14 +85,18 @@ public class NavigationDrawerActivity extends AppCompatActivity
             Intent intent = new Intent(this, DonorInfo.class);
             startActivity(intent);
         }
-        else if (id == R.id.bloodsgroup) {
+        else if (id == R.id.bloodsgroup)
+        {
 
         }
-        else if (id == R.id.saved_donors) {
+        else if (id == R.id.saved_donors)
+        {
 
         }
-        else if (id == R.id.Info) {
-
+        else if (id == R.id.Info)
+        {
+            Intent intent = new Intent(this, BloodBanks.class);
+            startActivity(intent);
         }
 
 
