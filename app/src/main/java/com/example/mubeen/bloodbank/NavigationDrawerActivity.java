@@ -89,10 +89,6 @@ public class NavigationDrawerActivity extends AppCompatActivity
         {
 
         }
-        else if (id == R.id.saved_donors)
-        {
-
-        }
         else if (id == R.id.Info)
         {
             Intent intent = new Intent(this, BloodBanks.class);

@@ -19,10 +19,6 @@
             android:icon="@drawable/ic_folder"
             android:title="@string/blood_group" />
         <item
-            android:id="@+id/saved_donors"
-            android:icon="@drawable/ic_save"
-            android:title="@string/saved_donors" />
-        <item
             android:id="@+id/Info"
             android:icon="@drawable/info"
             android:title="@string/blood_banks" />

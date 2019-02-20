@@ -10,8 +10,8 @@ import android.widget.TextView;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ProgrammingViewHolder>
 {
-    private String[] data;
-    public Adapter(String[] data)
+    private bank data[];
+    public Adapter(bank data[])
     {
         this.data=data;
     }
@@ -21,7 +21,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ProgrammingViewHolder>
     public ProgrammingViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.donor_info_layout,parent,false);
+        View view = inflater.inflate(R.layout.bank_layout,parent,false);
         return new ProgrammingViewHolder(view);
     }
 
@@ -30,14 +30,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ProgrammingViewHolder>
     {
         ImageView imageViewPerson = holder.imageViewPerson;
         TextView textViewName = holder.textViewName;
-        TextView textViewBlood = holder.textViewBlood;
-        TextView textViewGender = holder.textViewGender;
         TextView textViewLocation = holder.textViewLocation;
-        imageViewPerson.setImageResource(R.drawable.user);
-        textViewName.setText(data.get(position).getName());
-        textViewBlood.setText(data.get(position).getBlood());
-        textViewGender.setText(data.get(position).getGender());
-        textViewLocation.setText(data.get(position).getLocation());
+        imageViewPerson.setImageResource(R.drawable.bloodbank);
+        textViewName.setText(data[position].getName());
+        textViewLocation.setText(data[position].getLocation());
     }
 
     @Override
@@ -49,16 +45,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ProgrammingViewHolder>
     public class ProgrammingViewHolder extends RecyclerView.ViewHolder{
         ImageView imageViewPerson;
         TextView textViewName;
-        TextView textViewBlood;
-        TextView textViewGender;
         TextView textViewLocation;
 
         public ProgrammingViewHolder(@NonNull View itemView) {
             super(itemView);
             this.imageViewPerson = itemView.findViewById(R.id.Person);
             this.textViewName = itemView.findViewById(R.id.Person_Name);
-            this.textViewBlood = itemView.findViewById(R.id.Person_Blood);
-            this.textViewGender =  itemView.findViewById(R.id.Person_Gender);
             this.textViewLocation = itemView.findViewById(R.id.Person_Location);
         }
     }

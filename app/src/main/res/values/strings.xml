@@ -60,6 +60,8 @@
     <string name="donor_gender">Gender</string>
     <string name="donor_location">Location</string>
     <string name="logout">Logout</string>
+    <string name="call">Call</string>
+    <string name="donor_call">Call</string>
 
     <string-array name="blood_type">
         <item>A+</item>
